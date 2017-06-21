@@ -24,6 +24,8 @@ public class ViewCount extends Configured implements Tool {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
+        job.setNumReduceTasks(2);
+
         job.setMapperClass(Map.class);
         job.setReducerClass(Reduce.class);
 
