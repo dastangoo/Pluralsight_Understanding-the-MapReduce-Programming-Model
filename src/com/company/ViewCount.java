@@ -29,6 +29,8 @@ public class ViewCount extends Configured implements Tool {
         job.setMapperClass(Map.class);
         job.setReducerClass(Reduce.class);
 
+        job.setCombinerClass(Reduce.class);
+
         Path inputFilePath = new Path(args[0]);
         Path outputFilePath = new Path(args[1]);
         FileInputFormat.addInputPath(job, inputFilePath);
